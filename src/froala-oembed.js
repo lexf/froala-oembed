@@ -290,7 +290,7 @@ FroalaEditor.PLUGINS.oembed = function (editor) {
   };
 };
 
-FroalaEditor.DefineIcon('insertOembed', {NAME: 'television'});
+FroalaEditor.DefineIcon('insertOembed', {SVG_KEY: 'insertEmbed'});
 FroalaEditor.RegisterCommand('insertOembed', {
   title: 'Insert Embeddable Content',
   undo: false,
@@ -317,7 +317,7 @@ FroalaEditor.RegisterCommand('oembedInsertByURL', {
   }
 });
 
-FroalaEditor.DefineIcon('oembedReplace', {NAME: 'exchange'});
+FroalaEditor.DefineIcon('oembedReplace', {SVG_KEY: 'edit'});
 FroalaEditor.RegisterCommand('oembedReplace', {
   title: 'Replace',
   undo: false,
@@ -329,7 +329,7 @@ FroalaEditor.RegisterCommand('oembedReplace', {
   }
 });
 
-FroalaEditor.DefineIcon('oembedRemove', {NAME: 'trash'});
+FroalaEditor.DefineIcon('oembedRemove', {SVG_KEY: 'remove'});
 FroalaEditor.RegisterCommand('oembedRemove', {
   title: 'Remove',
   callback() {
@@ -337,7 +337,7 @@ FroalaEditor.RegisterCommand('oembedRemove', {
   }
 });
 
-FroalaEditor.DefineIcon('oembedBack', {NAME: 'arrow-left'});
+FroalaEditor.DefineIcon('oembedBack', {SVG_KEY: 'undo'});
 FroalaEditor.RegisterCommand('oembedBack', {
   title: 'Back',
   undo: false,
