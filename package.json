@@ -26,6 +26,6 @@
 		]
 	},
 	"scripts": {
-		"prepublishOnly": "babel src --out-dir ."
+		"prepare": "babel src --out-dir ."
 	}
 }
