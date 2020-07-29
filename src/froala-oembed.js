@@ -6,7 +6,15 @@ $.extend(FroalaEditor.POPUP_TEMPLATES, {
 });
 $.extend(FroalaEditor.DEFAULTS, {
   oembedEditButtons: ['oembedReplace', 'oembedRemove'],
-  oembedEmbedFactory: src => Promise.resolve($('<iframe>').attr({src})),
+  oembedEmbedFactory: src => {
+    let resolvingElement;
+    if (/^<iframe/.test(src)) {
+      resolvingElement = src;
+    } else {
+      resolvingElement = $('<iframe>').attr({src: src});
+    }
+    return Promise.resolve(resolvingElement);
+  },
   oembedInsertButtons: ['oembedBack'],
   oembedMove: true,
   oembedSplitHtml: false,
@@ -229,7 +237,6 @@ FroalaEditor.PLUGINS.oembed = function (editor) {
           $(this).prop({disabled: true});
         })
       }
-      if (!/^http/.test(url)) url = 'https://' + url;
       insertOembed(url);
     },
     refreshBackButton($btn) {
